@@ -1,11 +1,12 @@
 import { EnglishMessages } from "../lang/en/en.js";
 
 export class ClientApp {
+
   constructor() {
     this.messages = new EnglishMessages();
 
     // Replace this with Server2's hosted URL.
-    this.apiBaseUrl = "https://...";
+    this.apiBaseUrl = "https://comp4537-server2-trepanier-dxe0a8b3aqhxb6ez.canadacentral-01.azurewebsites.net";
 
     this.pageTitle = document.getElementById("pageTitle");
 
@@ -82,7 +83,7 @@ export class ClientApp {
     const encodedQuery = encodeURIComponent(`"${query}"`);
 
     fetch(`${this.apiBaseUrl}/api/v1/sql/${encodedQuery}`, {
-      method: "GET",
+        method: "GET",
     })
       .then((response) => {
         return response.text();
